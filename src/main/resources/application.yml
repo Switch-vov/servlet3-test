@@ -1,0 +1,21 @@
+server: # 端口号
+  port: 6166
+spring: # 应用名
+  application:
+    name: servlet3-test
+  jpa: # 配置JPA
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource: # 配置数据源和脚本
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+logging: # 配置日志
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.switchvov: DEBUG
